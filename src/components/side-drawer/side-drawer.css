@@ -10,7 +10,7 @@ aside {
   transition: left 300ms ease-in-out;
 }
 
-:host([open]) aside {
+:host([opened]) aside {
   left: 0;
 }
 
