@@ -7,9 +7,34 @@
 
   <script type="module" src="/build/stenciljs-basic-web-components.esm.js"></script>
   <script nomodule src="/build/stenciljs-basic-web-components.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
 
+    .side-nav ul {
+      list-style: none;
+    }
+
+    .side-nav li {
+      margin: 1rem 0;
+    }
+
+    .side-nav a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
 </head>
 <body>
-  <uc-side-drawer title="Main Manu" />
+  <uc-side-drawer title="Main Manu">
+    <nav class="side-nav">
+      <ul>
+        <li><a href="/">Link</a></li>
+        <li><a href="/">Another Link</a></li>
+        <li><a href="/">third Link</a></li>
+      </ul>
+    </nav>
+  </uc-side-drawer>
 </body>
 </html>
