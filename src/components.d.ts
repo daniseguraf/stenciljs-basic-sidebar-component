@@ -12,7 +12,7 @@ export namespace Components {
   interface UcSideDrawer {
     'open': () => Promise<void>;
     'opened': boolean;
-    'title': string;
+    'titleMenu': string;
   }
 }
 
@@ -32,7 +32,7 @@ declare global {
 declare namespace LocalJSX {
   interface UcSideDrawer extends JSXBase.HTMLAttributes<HTMLUcSideDrawerElement> {
     'opened'?: boolean;
-    'title'?: string;
+    'titleMenu'?: string;
   }
 
   interface IntrinsicElements {
