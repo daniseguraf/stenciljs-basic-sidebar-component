@@ -21,6 +21,11 @@
       color: black;
     }
 
+    .side-nav a:hover {
+      text-decoration: underline;
+      /* color: black; */
+    }
+
     .side-nav li {
       margin: 1rem 0;
     }
@@ -29,7 +34,6 @@
       color: rgb(245, 245, 245);
       background: #D9048E;
       border: 2px solid #7C038C;
-      border-radius: 10px;
       font-size: 14px;
       padding: 5px 12px;
       outline: none;
@@ -37,7 +41,7 @@
     }
 
     #side-drawer-btn:hover {
-      color: #FFF;
+      color:rgb(245, 245, 245);
       background: #7C038C;
       border-color: #7C038C;
     }
@@ -45,12 +49,13 @@
 </head>
 <body>
   <button id="side-drawer-btn">Open Side Menu</button>
-  <ce-side-drawer title-menu="Main Manu">
+  <ce-side-drawer title-menu="Sidebar Menu">
     <nav class="side-nav">
       <ul class="ul">
-        <li><a href="/">Link</a></li>
-        <li><a href="/">Another Link</a></li>
-        <li><a href="/">third Link</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Documentation</a></li>
+        <li><a href="/">Blog</a></li>
+        <li><a href="/">FAQ</a></li>
       </ul>
     </nav>
   </ce-side-drawer>

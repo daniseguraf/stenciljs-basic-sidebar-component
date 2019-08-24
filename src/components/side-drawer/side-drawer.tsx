@@ -12,7 +12,7 @@ export class SideDrawer {
   @Prop({ reflectToAttr: true, mutable: true }) opened: boolean;
 
   onCloseDrawer = () => {
-    this.opened = false;
+    this.opened = false
   }
 
   onContentChange = (value: string) => {
@@ -21,7 +21,7 @@ export class SideDrawer {
 
   @Method()
   async open() {
-    this.opened = true;
+    this.opened = true
   }
 
   render() {
