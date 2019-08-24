@@ -9,7 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface UcSideDrawer {
+  interface CeSideDrawer {
     'open': () => Promise<void>;
     'opened': boolean;
     'titleMenu': string;
@@ -19,24 +19,24 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLUcSideDrawerElement extends Components.UcSideDrawer, HTMLStencilElement {}
-  var HTMLUcSideDrawerElement: {
-    prototype: HTMLUcSideDrawerElement;
-    new (): HTMLUcSideDrawerElement;
+  interface HTMLCeSideDrawerElement extends Components.CeSideDrawer, HTMLStencilElement {}
+  var HTMLCeSideDrawerElement: {
+    prototype: HTMLCeSideDrawerElement;
+    new (): HTMLCeSideDrawerElement;
   };
   interface HTMLElementTagNameMap {
-    'uc-side-drawer': HTMLUcSideDrawerElement;
+    'ce-side-drawer': HTMLCeSideDrawerElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface UcSideDrawer extends JSXBase.HTMLAttributes<HTMLUcSideDrawerElement> {
+  interface CeSideDrawer extends JSXBase.HTMLAttributes<HTMLCeSideDrawerElement> {
     'opened'?: boolean;
     'titleMenu'?: string;
   }
 
   interface IntrinsicElements {
-    'uc-side-drawer': UcSideDrawer;
+    'ce-side-drawer': CeSideDrawer;
   }
 }
 

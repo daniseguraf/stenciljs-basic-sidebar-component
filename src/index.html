@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <title>Stencil Basic Sidebar Component</title>
 
   <script type="module" src="/build/stenciljs-basic-web-components.esm.js"></script>
   <script nomodule src="/build/stenciljs-basic-web-components.js"></script>
@@ -24,11 +24,28 @@
     .side-nav li {
       margin: 1rem 0;
     }
+
+    #side-drawer-btn {
+      color: rgb(245, 245, 245);
+      background: #D9048E;
+      border: 2px solid #7C038C;
+      border-radius: 10px;
+      font-size: 14px;
+      padding: 5px 12px;
+      outline: none;
+      transition: all 200ms ease-in;
+    }
+
+    #side-drawer-btn:hover {
+      color: #FFF;
+      background: #7C038C;
+      border-color: #7C038C;
+    }
   </style>
 </head>
 <body>
   <button id="side-drawer-btn">Open Side Menu</button>
-  <uc-side-drawer title-menu="Main Manu">
+  <ce-side-drawer title-menu="Main Manu">
     <nav class="side-nav">
       <ul class="ul">
         <li><a href="/">Link</a></li>
@@ -36,11 +53,11 @@
         <li><a href="/">third Link</a></li>
       </ul>
     </nav>
-  </uc-side-drawer>
+  </ce-side-drawer>
 
   <script>
     const sideDrawerButton = document.querySelector('#side-drawer-btn');
-    const sideDrawer = document.querySelector('uc-side-drawer');
+    const sideDrawer = document.querySelector('ce-side-drawer');
     sideDrawerButton.addEventListener('click', () => {
       if(!sideDrawer.opened) {
         sideDrawer.open();
