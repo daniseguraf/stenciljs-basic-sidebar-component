@@ -1,4 +1,4 @@
-import { Component, Prop, State, h, Method } from '@stencil/core'
+import { Component, Prop, State, h, Method, Event, EventEmitter } from '@stencil/core'
 
 @Component({
   tag: 'ce-side-drawer',
@@ -7,21 +7,27 @@ import { Component, Prop, State, h, Method } from '@stencil/core'
 })
 
 export class SideDrawer {
-  @State() showContactInfo = false;
+  @State() showContactInfo: boolean = false;
+
   @Prop({ reflectToAttr: true }) titleMenu: string;
   @Prop({ reflectToAttr: true, mutable: true }) opened: boolean;
 
-  onCloseDrawer = () => {
-    this.opened = false
+  @Event() sidebarIsClose: EventEmitter;
+  @Method()
+  async close() {
+    this.opened = false;
+    this.sidebarIsClose.emit(this.opened)
   }
 
-  onContentChange = (value: string) => {
-    this.showContactInfo = value === 'contact'
+  onContentChange(content: string) {
+    this.showContactInfo = content === 'contact';
   }
 
+  @Event() sidebarIsOpen: EventEmitter;
   @Method()
   async open() {
-    this.opened = true
+    this.opened = true;
+    this.sidebarIsOpen.emit(this.opened);
   }
 
   render() {
@@ -41,11 +47,11 @@ export class SideDrawer {
     }
 
     return [
-      <div class="backdrop" onClick={this.onCloseDrawer} />,
+      <div class="backdrop" onClick={this.close.bind(this)} />,
       <aside>
         <header>
           <h1>{this.titleMenu}</h1>
-          <button onClick={this.onCloseDrawer} >X</button>
+          <button onClick={this.close.bind(this)} >X</button>
         </header>
         <section id="tabs">
           <button

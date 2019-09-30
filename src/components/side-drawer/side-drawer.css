@@ -1,18 +1,18 @@
 aside {
   position: fixed;
   top: 0;
-  left: -100%;
+  right: -100%;
   width: 30rem;
   max-width: 80%;
   height: 100vh;
   background:#fdfdfd;
   box-shadow: 0 2px 8px rgba(0,0,0,0.26);
-  transition: left 300ms ease-in-out;
+  transition: right 300ms ease-in-out;
   z-index: 100;
 }
 
 :host([opened]) aside {
-  left: 0;
+  right: 0;
 }
 
 header {

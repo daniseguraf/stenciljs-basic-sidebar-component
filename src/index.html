@@ -29,26 +29,10 @@
     .side-nav li {
       margin: 1rem 0;
     }
-
-    #side-drawer-btn {
-      color: rgb(245, 245, 245);
-      background: #D9048E;
-      border: 2px solid #7C038C;
-      font-size: 14px;
-      padding: 5px 12px;
-      outline: none;
-      transition: all 200ms ease-in;
-    }
-
-    #side-drawer-btn:hover {
-      color:rgb(245, 245, 245);
-      background: #7C038C;
-      border-color: #7C038C;
-    }
   </style>
 </head>
 <body>
-  <button id="side-drawer-btn">Open Side Menu</button>
+  <ce-hamburger id="hamburger"></ce-hamburger>
   <ce-side-drawer title-menu="Sidebar Menu">
     <nav class="side-nav">
       <ul class="ul">
@@ -61,13 +45,12 @@
   </ce-side-drawer>
 
   <script>
-    const sideDrawerButton = document.querySelector('#side-drawer-btn');
+    const hamburger = document.querySelector('#hamburger');
     const sideDrawer = document.querySelector('ce-side-drawer');
-    sideDrawerButton.addEventListener('click', () => {
-      if(!sideDrawer.opened) {
-        sideDrawer.open();
-      }
-    })
+
+    hamburger.addEventListener('click', () => {
+      !sideDrawer.opened ? sideDrawer.open() : sideDrawer.close();
+    });
   </script>
 </body>
 </html>
