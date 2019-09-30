@@ -1,0 +1,67 @@
+.hamburger {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1200;
+}
+
+.hamburger .bar, .hamburger .bar:before, .hamburger .bar:after {
+  height: 2px;
+  width: 1.4rem;
+  background: white;
+  border-radius: 11px;
+}
+
+.hamburger .bar {
+  position: relative;
+  transition: background 10ms 300ms ease;
+}
+
+.hamburger .bar:before, .hamburger .bar:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+}
+
+.hamburger .bar:before {
+  top: -7px;
+}
+
+.hamburger .bar:after {
+  top: 7px;
+}
+
+/* Hamburguer active */
+
+:host([is-active]) .hamburger .bar {
+  background: transparent;
+}
+
+:host([is-active]) .hamburger .bar:before, :host([is-active]) .hamburger .bar:after {
+  top: 0;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+}
+
+:host([is-active]) .hamburger .bar:before {
+  transform: translateY(0);
+  transform: rotate(45deg);
+}
+
+:host([is-active]) .hamburger .bar:after {
+  transform: translateY(0);
+  transform: rotate(-45deg);
+}
+
+.hidden {
+  display: none;
+}
